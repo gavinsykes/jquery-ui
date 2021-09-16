@@ -165,6 +165,14 @@ $.widget( "ui.draggable", $.ui.mouse, {
 
 		var o = this.options;
 
+		// Extract the element's size to help the user creating an element that is draggable AND resizable
+		var el = this.element;
+
+		this.size = {
+			width: el.width(),
+			height: el.height()
+		};
+
 		//Create and append the visible helper
 		this.helper = this._createHelper( event );
 
